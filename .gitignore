@@ -1,0 +1,18 @@
+# Локальные настройки и пароли
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Журналы запусков
+logs/
+*.log
+
+# Скачанные и обработанные данные
+data/raw/
+data/processed/
+checks.json
