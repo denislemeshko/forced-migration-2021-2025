@@ -23,3 +23,7 @@ CREATE TABLE IF NOT EXISTS refugee_world (
     year integer PRIMARY KEY,
     refugees bigint NOT NULL CHECK (refugees >= 0)
 );
+
+ALTER TABLE refugee_origins
+ADD COLUMN IF NOT EXISTS oip bigint CHECK (oip >= 0);
+

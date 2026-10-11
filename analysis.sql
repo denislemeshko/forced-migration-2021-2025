@@ -50,3 +50,14 @@ WHERE o.year BETWEEN 2021 AND 2025
   AND o.origin IN ('UKR', 'SYR', 'AFG')
 GROUP BY o.year, w.refugees
 ORDER BY o.year;
+
+-- Сумма вычисляется только при наличии обеих категорий.
+SELECT
+    year,
+    origin,
+    refugees,
+    oip,
+    refugees + oip AS refugees_and_oip
+FROM refugee_origins
+WHERE origin = 'AFG'
+ORDER BY year;

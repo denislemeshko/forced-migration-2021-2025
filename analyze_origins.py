@@ -32,7 +32,7 @@ with csv_file.open("w", newline="", encoding="utf-8-sig") as file:
     writer = csv.writer(file)
     writer.writerow([
         "year", "origin", "refugees",
-        "change_people", "change_percent"
+        "change_people", "change_percent", "oip"
     ])
 
     print("Страна | Год | Беженцы | Изменение | %")
@@ -41,6 +41,8 @@ with csv_file.open("w", newline="", encoding="utf-8-sig") as file:
         country = row["coo_iso"]
         year = int(row["year"])
         current = int(row["refugees"])
+        raw_oip = row.get("oip")
+        oip = None if raw_oip in (None, "", "-") else int(raw_oip)
 
         change = None
         percent = None
@@ -52,7 +54,7 @@ with csv_file.open("w", newline="", encoding="utf-8-sig") as file:
                 percent = round(change / prior[1] * 100, 2)
 
         writer.writerow([
-            year, country, current, change, percent
+            year, country, current, change, percent, oip
         ])
 
         change_text = "—" if change is None else f"{change:+,}"
