@@ -262,3 +262,12 @@ Upsert не удаляет записи, исчезнувшие из источ�
 - [Методология](https://www.unhcr.org/refugee-statistics/methodology)
 - [Определения](https://www.unhcr.org/refugee-statistics/methodology/definition)
 - [Структура данных](https://www.unhcr.org/refugee-statistics/methodology/data-content)
+
+## Dashboard
+
+The Apache Superset dashboard shows global refugee population trends,
+trends for Afghanistan, Syria and Ukraine, and changes between 2024 and 2025.
+
+![UNHCR refugee population dashboard](dashboard/dashboard.png)
+
+Dashboard export: [migration_analysis.zip](dashboard/migration_analysis.zip).
